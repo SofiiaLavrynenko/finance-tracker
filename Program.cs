@@ -14,6 +14,7 @@ class Program
             System.Console.WriteLine("1 - add new transaction");
             System.Console.WriteLine("2 - see all transactions");
             System.Console.WriteLine("3 - see current balance");
+            System.Console.WriteLine("4 - see monthly stats");
             System.Console.WriteLine("0 - exit");
 
             System.Console.Write("Choose your option: ");
@@ -75,6 +76,13 @@ class Program
                 case "3":
                     {
                         System.Console.WriteLine($"\nCurrent balance is {manager.GetBalance()}.");
+
+                        break;
+                    }
+
+                case "4":
+                    {
+                        manager.PrintStatistics();
 
                         break;
                     }
