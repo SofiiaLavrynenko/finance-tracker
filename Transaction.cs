@@ -16,4 +16,9 @@ public class Transaction
         Type = type;
         Date = DateTime.Now;
     }
+
+    public override string ToString()
+    {
+        return $"ID: {Id} | Amount: {Amount} | Category: {Category} | Type: {Type} | Date: {Date}";
+    }
 }
