@@ -3,15 +3,17 @@ namespace FinanceTracker;
 public class FinanceManager
 {
     private List<Transaction> _transactions;
+    private readonly string _filePath = "transactions.json";
 
     public FinanceManager()
     {
-        _transactions = new List<Transaction>();
+        _transactions = FileService.LoadTransactions(_filePath);
     }
 
     public void AddTransaction(Transaction transaction)
     {
         _transactions.Add(transaction);
+        FileService.SaveTransactions(_transactions, _filePath);
     }
 
     public List<Transaction> GetAllTransactions()
