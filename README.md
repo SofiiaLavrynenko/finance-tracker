@@ -24,6 +24,7 @@
 
 ## Project Structure
 
+```text
 FinanceTracker/
 ├── Program.cs             # application entry point and interactive CLI menu
 ├── FinanceManager.cs      # core business logic for managing transactions and statistics
@@ -32,18 +33,25 @@ FinanceTracker/
 ├── TransactionType.cs     # enum defining transaction types (Income / Expense)
 ├── transactions.json      # local JSON storage file for transactions
 └── finance-tracker.csproj # .NET project configuration file
+```
 
 ---
 
 ## Getting Started 
 
 1. clone the repository
+``` bash
 git clone https://github.com/SofiiaLavrynenko/finance-tracker
 cd finance-tracker
+```
 2. build the project 
+``` bash
 dotnet build
+```
 3. run the application
+``` bash
 dotnet run
+```
 
 ---
 
@@ -51,25 +59,27 @@ dotnet run
 
 Upon launching the program, the main console menu will appear:
 
+``` text
 FINANCE TRACKER
 1 - add new transaction
 2 - see all transactions
 3 - see current balance
 4 - see monthly stats
 0 - exit
+```
 
-1. add new transaction: enter transaction details includinng ID, amount, category, and select the type (1 for income, 2 for expense)
-2. see all transactions: display all stored transactions with timestamps
-3. see current balance: display the calculated balance
-4. see monthly stats: generate a summary report for the current calendar month
-5. exit: terminate the application
+1. **add new transaction**: enter transaction details includinng ID, amount, category, and select the type (1 for income, 2 for expense)
+2. **see all transactions**: display all stored transactions with timestamps
+3. **see current balance**: display the calculated balance
+4. **see monthly stats**: generate a summary report for the current calendar month
+5. **exit**: terminate the application
 
 ---
 
 ## Data Storage Format
 
 Transactions are saved locally in JSON format with the following structure:
-
+``` json
 [
   {
     "Id": 1,
@@ -79,7 +89,8 @@ Transactions are saved locally in JSON format with the following structure:
     "Date": "2026-08-03T21:33:43.101399+03:00"
   }
 ]
+```
 
-'Type' field values:
-0 - income
-1 - expense
+`Type` field values:
+* `0` - income
+* `1` - expense
